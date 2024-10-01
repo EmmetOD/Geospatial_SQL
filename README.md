@@ -1,7 +1,8 @@
+The following repository contains PostgreSQL and POSTGIS for geospatial operations. 
 
 - Stolpersteine -
   These queries along with the corresponding CSV file allow for historical recoards relating to Jewish deportation in Berlin during 2nd World War to be explored.
-  Such as these choropleth maps below.
+  Such as these choropleth maps below. *Note this CSV only contains information on Stolpersteine (Memorial stones) not actual deporations, hence the respectively low numbers. 
   
 
   ![Deportations Per District w:Points](https://github.com/user-attachments/assets/856a3ba3-339a-4f21-aeaf-3ede2ae5fd28)
