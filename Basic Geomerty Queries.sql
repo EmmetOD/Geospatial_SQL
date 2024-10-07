@@ -1,18 +1,5 @@
-select * from Week4Switzerland
 
--- STEP 0 - Loading the data 
-SELECT name,timestamp, ST_AsText(geom) 
-from Week4Switzerland;
-
--- STEP 1 - consider some of the characteristics of 
--- the polygons in the table
-
-select id, name, ST_Npoints(geom) as n, ST_SRID(geom)
-from Week4Switzerland 
-ORDER BY n desc;
-
---STEP 2 - Calculate the area and the PERIMETER of the polygons
--- we need to use ST_Transform - original data in EPSG:4326
+-- ST_Transform - original data in EPSG:4326
 
 Select id, name, ST_Area(ST_Transform(geom,21781))/1000000 as AreaKM2,
 ST_Perimeter(ST_Transform(geom,21781))/1000 as LengthKM
@@ -31,7 +18,7 @@ where
 ST_Contains(geom,St_GeomFromText('POINT(6.629004 46.516584)',4326));
 
 -- STEP 5 - mixed geometries in ST_Contains
--- LEt's transform the geom column to EPSG:21781
+-- Transform the geom column to EPSG:21781
 -- Run the query to see the output. 
 Select ID, name from Week4Switzerland
 where 
